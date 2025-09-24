@@ -1,0 +1,376 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+/* Quiero usar la fuente "Poppins" */
+
+/* Estoy usando la unidad rem = "root em" que equivale al tamaño de la fuente raíz del documento ,
+el valor de font-size definido en MI etiqueta <html> es....html { font-size: 62.5%;}
+Por defecto, el navegador usa 16px como tamaño base, así que 62.5% de 16px es 10px.
+Por lo tanto, en MI caso:
+1rem = 10px
+10rem = 100px
+2rem = 20px
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-color: #01040b;
+    --second-bg-color: #9c0c62;
+    --text-color: #fff;
+    --main-color: #0ef;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
+/* ===== ENCABEZADO ===== */
+.encabezado {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: var(--bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.encabezado.sticky {
+    border-bottom: .1rem solid rgba(0, 0, 0, .2);
+}
+
+.logo {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+    cursor: default;
+}
+
+.barra-navegacion a {
+    font-size: 1.7rem;
+    color: var(--text-color);
+    margin-left: 4rem;
+    transition: .3s;
+}
+
+.barra-navegacion a:hover,
+.barra-navegacion a.activo {
+    color: var(--main-color);
+}
+
+#icono-menu {
+    font-size: 3.6rem;
+    color: var(--text-color);
+    display: none;
+}
+
+/* ===== INICIO ===== */
+.inicio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagen-inicio img {
+    width: 20vw;
+    animation: flotarImagen 4s ease-in-out infinite;
+}
+
+@keyframes flotarImagen {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(20rem); } /* Cambia 5rem por la distancia que prefieras */
+    100% { transform: translateX(0); }
+}
+
+.contenido-inicio h3 {
+    font-size: 3.2rem;
+    font-weight: 700;
+}
+
+.contenido-inicio h3:nth-of-type(2) {
+    margin-bottom: 2rem;
+}
+
+span {
+    color: var(--main-color);
+}
+
+.contenido-inicio h1 {
+    font-size: 5.6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.redes-sociales a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: transparent;
+    border: .2rem solid var(--main-color);
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--main-color);
+    margin: 3rem 1.5rem 3rem 0;
+    transition: .5s ease;
+}
+
+.redes-sociales a:hover {
+    background: var(--main-color);
+    color: var(--second-bg-color);
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+.boton {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    border-radius: 4rem;
+    box-shadow: 0 0 1rem var(--main-color);
+    font-size: 1.6rem;
+    color: var(--second-bg-color);
+    letter-spacing: .1rem;
+    font-weight: 600;
+    transition: .5s ease;
+}
+
+.boton:hover {
+    box-shadow: none;
+}
+
+/* ===== SOBRE MÍ ===== */
+.sobre-mi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    background: var(--second-bg-color);
+}
+
+.imagen-sobre-mi img {
+    width: 55rem;
+}
+
+.titulo {
+    text-align: center;
+    font-size: 4.5rem;
+}
+
+.contenido-sobre-mi h2 {
+    text-align: left;
+    line-height: 1.2;
+}
+
+.contenido-sobre-mi h3 {
+    font-size: 2.6rem;
+}
+
+.contenido-sobre-mi p {
+    font-size: 2.3rem;
+    margin: 2rem 0 3rem;
+}
+
+/* ===== SERVICIOS ===== */
+.servicios h2 {
+    margin-bottom: 5rem;
+}
+
+.contenedor-servicios {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.contenedor-servicios .caja-servicio {
+    flex: 1 1 30rem;
+    background: var(--second-bg-color);
+    padding: 3rem 2rem 4rem;
+    border-radius: 2rem;
+    text-align: center;
+    border: .2rem solid var(--bg-color);
+    transition: .5s ease;
+}
+
+.contenedor-servicios .caja-servicio:hover {
+    border-color: var(--main-color);
+    transform: scale(1.02);
+}
+
+.caja-servicio i {
+    font-size: 7rem;
+    color: var(--main-color);
+}
+
+.caja-servicio h3 {
+    font-size: 2.6rem;
+}
+
+.caja-servicio p {
+    font-size: 1.6rem;
+    margin: 1rem 0 3rem;
+}
+
+/* ===== PORTAFOLIO ===== */
+.portafolio {
+    background: var(--second-bg-color);
+}
+
+.portafolio h2 {
+    margin-bottom: 4rem;
+}
+
+.contenedor-portafolio {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.contenedor-portafolio .caja-portafolio {
+    position: relative;
+    border-radius: 2rem;
+    box-shadow: 0 0 1rem var(--bg-color);
+    overflow: hidden;
+    display: flex;
+}
+
+.caja-portafolio img {
+    width: 100%;
+    transition: .5s ease;
+}
+
+.caja-portafolio:hover img {
+    transform: scale(1.1);
+}
+
+.caja-portafolio .capa-portafolio {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, .1), var(--main-color));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 4rem;
+    transform: translateY(100%);
+    transition: .5s ease;
+}
+
+.caja-portafolio:hover .capa-portafolio {
+    transform: translateY(0);
+}
+
+.capa-portafolio h4 {
+    font-size: 3rem;
+    color: #9c0c62;
+}
+
+.capa-portafolio p {
+    font-size: 1.6rem;
+    margin: .3rem 0 1rem;
+    color: #9c0c62;
+}
+
+/* ===== CONTACTO ===== */
+.contacto h2 {
+    margin-bottom: 3rem;
+}
+
+.contacto form {
+    max-width: 70rem;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contacto form .caja-entrada {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contacto form .caja-entrada input,
+.contacto form textarea {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background: var(--second-bg-color);
+    border-radius: .8rem;
+    margin: .7rem 0;
+}
+
+.contacto form .caja-entrada input {
+    width: 49%;
+}
+
+.contacto form textarea {
+    resize: none;
+}
+
+.contacto form .boton {
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+/* ===== PIE DE PÁGINA ===== */
+.pie{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   flex-wrap: wrap;
+   padding: 2rem 9%;
+   background: var(--second-bg-color);
+}
+
+.footer-text p{
+   font-size: 1.6rem;
+}
+
+.footer-iconTop a{
+   display: inline-flex;
+   justify-content: center;
+   align-items: center;
+   padding: .8rem;
+   background: var(--main-color);
+   border-radius: .8rem;
+   transition: .5s ease;
+}
+
+.footer-iconTop a:hover{
+   box-shadow: 0 0 1rem var(--main-color);
+}
+
+.footer-iconTop a i{
+   font-size: 4rem;
+   color: var(--second-bg-color);
+}
